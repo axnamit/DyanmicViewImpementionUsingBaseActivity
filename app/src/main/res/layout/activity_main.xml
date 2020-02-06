@@ -6,13 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+    <com.mikhaellopez.circleview.CircleView
+        android:id="@+id/circleView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:cv_color="#626BA2"
+        app:cv_shadow="true"
+        app:cv_shadow_color="#3f51b5"
+        app:cv_shadow_radius="100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.loopeer.shadow.ShadowView
+        android:id="@+id/shadow_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:elevation="10dp"
+        android:padding="10dp"
+        app:cornerRadius="4dp"
+        app:shadowColor="#3f51b5"
+        app:layout_constraintBottom_toTopOf="@+id/custumView"
+        app:layout_constraintEnd_toEndOf="@+id/circleView"
+        app:layout_constraintStart_toStartOf="@+id/circleView"
+        app:layout_constraintTop_toBottomOf="@+id/circleView"
+        app:shadowMargin="20dp"
+        app:shadowRadius="14dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Google Developer Days Europe 2017 took place in Krakow, Poland. In this playlist, you can find all the recorded sessions from the event, across all tracks (Develop on Mobile, Mobile Web, Beyond Mobile, and Android)." />
+    </com.loopeer.shadow.ShadowView>
+
+    <com.example.dynamicview.CustumView
+        android:id="@+id/custumView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/circleView"
+        app:layout_constraintStart_toStartOf="@+id/circleView"
+        app:layout_constraintTop_toBottomOf="@+id/circleView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
